@@ -1,0 +1,64 @@
+Райчо Костадинов 155 25
+
+Зад 1:
+
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+    int a[4][4],summ=0;
+    for (int i=0; i<4; i++)
+    {
+        for (int j=0; j<4; j++)
+        {
+          a[i][j]= rand()%201-100;
+        }
+    }
+    for (int k=0; k<4; k++)
+    {
+        for (int l=0; l<4; l++)
+        {
+           cout << setw(3);
+           cout << a[k][l] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    for (int r=0; r<4; r++)
+    {
+        for(int p=0; p<4; p++)
+        {
+            if (r==p)
+            {
+                cout << a[r][p] << endl;
+            }
+        }
+    }
+    cout << endl;
+    for (int s=0; s<4; s++)
+    {
+        for (int o=0; o<4; o++)
+        {
+            if (s+o==4-1)
+            {
+                cout << a[s][o] << endl;
+            }
+        }
+    }
+    cout << endl;
+    for (int v=0; v<4; v++)
+    {
+        for (int f=0; f<4; f++)
+        {
+            if (v==f || v+f==4-1)
+            {
+                summ+=a[v][f];
+            }
+        }
+    }
+    cout << "Sum= " << summ;
+    return 0;
+}
