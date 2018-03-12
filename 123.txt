@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,fact=1;
+cout << "n="
+cin >> n;
+if (!cin)
+{
+cout << "Error.Bad input";
+return 1;
+}
+if (n<=0)
+{
+cout << "incorrect input";
+return 1;
+for (i=1; i<=n, i++)
+fact=fact+1;
+cout << n << "!=" << fact << endl;
+return 0;
+}
