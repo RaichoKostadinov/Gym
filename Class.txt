@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+class Shape
+{
+protected:
+    double width;
+    double height;
+public:
+    virtual double Area()=0;
+    virtual void sayHello()=0;
+    double getW()
+    {
+        return width;
+    }
+    void setW(double p)
+    {
+        if(p<0)
+        {
+            width=0;
+        }
+        else
+        {
+            width=p;
+        }
+    }
+    void setH(double p)
+    {
+        if(p<0)
+        {
+            height=0;
+        }
+        else
+        {
+            height=p;
+        }
+    }
+    double getH()
+    {
+        return height;
+    }
+};
+class Rectangle: public Shape
+{
+public:
+    void sayHello()
+    {
+        cout << "ded" << endl;
+    }
+    double Area()
+    {
+        double S= width*height;
+        return S;
+    }
+};
+class Triangle: public Shape
+{
+public:
+    void sayHello()
+    {
+        cout << "ded" << endl;
+    }
+    double Area()
+    {
+        double S= width*height/2;
+        return S;
+    }
+};
+int main()
+{
+Rectangle r1;
+r1.setW(3.2);
+r1.setH(2.1);
+cout << r1.Area() << endl;
+Triangle t1;
+t1.setH(2);
+t1.setW(4);
+cout << t1.Area() << endl;
+return 0;
+}
